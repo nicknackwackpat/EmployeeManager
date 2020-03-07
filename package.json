@@ -1,0 +1,26 @@
+{
+  "name": "employeemanager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "manager.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "inquirer": "^7.0.6",
+    "mysql": "^2.18.1",
+    "prettier": "^1.19.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicknackwackpat/EmployeeManager.git"
+  },
+  "author": "Nick Phillips",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicknackwackpat/EmployeeManager/issues"
+  },
+  "homepage": "https://github.com/nicknackwackpat/EmployeeManager#readme"
+}
