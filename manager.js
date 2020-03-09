@@ -85,7 +85,17 @@ function viewEmployeesDep() {
 };
 
 function viewEmployeesMang() {
-
+    inquirer.prompt({
+        type: "list",
+        message: "Which manager would you like to see employees for?",
+        name: "managerQ",
+        choices: ["Vanille Oerba", "Dina Caliente", "Nina Caliente", "Bella Goth"]
+    }).then(answers => {
+        connection.query("SELECT employees.id, first_name, last_name FROM employees INNER JOIN employees.manager_id = employees_id;"), function (err, res) {
+            if (err) throw err;
+            console.table(res);
+            };
+    });
 };
 
 function addEmployee() {
@@ -123,20 +133,20 @@ function addEmployee() {
     });
 };
 
-    function removeEmployee() {
-        inquirer.prompt({
+function removeEmployee() {
+    inquirer.prompt({
             type: "list",
             message: "Which employee would you like to remove?",
             name: "removeQ",
             choices: ["Vanille Oerba", "Dina Caliente", "Nina Caliente", "Bella Goth", "Caroline Custard", "Tyshawn Mercer", "Ann Takamaki", "Don Lothario", "Chad Michaels"]
 
-        }).then(answers => {
+    }).then(answers => {
             connection.query(`DELETE ${answers.removeQ} from employees;`, function (err, res) {
                 if (err) throw err;
                 console.table(res);
                 startPrompt();
             });
         });
-    };
+};
 
-    // function updateEmployee() {
+// function updateEmployee() 
