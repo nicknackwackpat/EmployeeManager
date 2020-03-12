@@ -24,16 +24,17 @@ CREATE TABLE employees (
   first_name VARCHAR(30) NOT NULL,
   last_name VARCHAR(30) NOT NULL,
   manager_id INT(10),
+  role_id INT(10),
   PRIMARY KEY (id),
   FOREIGN KEY (role_id) REFERENCES role(id),
   FOREIGN KEY (manager_id) REFERENCES employees(id)
 );
 
-INSERT INTO employees (first_name, last_name)
-VALUES ("Vanille", "Oerba"), ("Dina", "Caliente"), ("Nina", "Caliente"), ("Bella", "Goth");
+INSERT INTO employees (first_name, last_name, role_id)
+VALUES ("Vanille", "Oerba", 1), ("Dina", "Caliente", 2), ("Nina", "Caliente", 4), ("Bella", "Goth", 3);
 
-INSERT INTO employees (first_name, last_name, manager_id)
-VALUES ("Caroline", "Custard", 3), ("Tyshawn", "Mercer", 4), ("Ann", "Takamaki", 2), ("Don", "Lothario", 1), ("Chad", "Michaels", 2);
+INSERT INTO employees (first_name, last_name, role_id, manager_id)
+VALUES ("Caroline", "Custard", 6, 3), ("Tyshawn", "Mercer", 7, 4), ("Ann", "Takamaki", 9, 2), ("Don", "Lothario", 8, 1), ("Chad", "Michaels", 10, 2);
 
 INSERT INTO department (name)
 VALUES ("Marketing"), ("Operations"), ("Finance"), ("Sales"), ("Research"), ("Sim Resources");
